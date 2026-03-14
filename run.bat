@@ -1,3 +1,3 @@
 @echo off
-py gradeview.py
+py application.py
 pause

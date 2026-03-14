@@ -9,9 +9,10 @@ frm = ttk.Frame(root, padding=10)
 
 root.title("Gradeview")
 
-inputURL = ""
+inputURL = "./in/4/"
 
 def open_in_folder():
+    global inputURL
     inputURL = filedialog.askdirectory()
     output.config(text=f"Folder selected: {inputURL}")
 
@@ -22,7 +23,7 @@ def run_gradeview():
     
     else:
         root.destroy()
-        gradeview.generate_files()
+        gradeview.generate_files(inputURL)
         gradeview.setupServer()
 
 root.minsize(300,0)

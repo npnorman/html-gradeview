@@ -57,8 +57,6 @@ function loadSelect(files) {
 
 function loadAllFiles(id) {
 
-    console.log(folderContents[id][0], folderContents[id][1])
-
     //load code window and iframe
     loadHTML(folderContents[id][0]);
 
@@ -108,7 +106,6 @@ folders.addEventListener('click', function (e) {
 });
 
 codeSelector.addEventListener('change', function () {
-    console.log("FETCHING")
     loadFile(jsCodeWindow, codeSelector.value);
 });
 
@@ -123,5 +120,3 @@ folderContents["johnsmith"].push("./john_smith/html2.html");
 // HTML, JS, other files
 folderContents["janesmith"].push("./jane_smith/html3.html");
 folderContents["janesmith"].push("./jane_smith/js1.js");
-
-console.log(folderContents);

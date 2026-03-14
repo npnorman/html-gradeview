@@ -3,18 +3,24 @@
 from tkinter import *
 from tkinter import ttk, filedialog
 import gradeview
+import os
 
 root = Tk()
 frm = ttk.Frame(root, padding=10)
 
 root.title("Gradeview")
 
-inputURL = "./in/4/"
+inputURL = ""
 
 def open_in_folder():
     global inputURL
-    inputURL = filedialog.askdirectory()
+    inputURL = filedialog.askdirectory(initialdir="./in/")
+    
+    relPath = os.path.relpath(inputURL)
+    inputURL = relPath
+    
     output.config(text=f"Folder selected: {inputURL}")
+    
 
 def run_gradeview():
     

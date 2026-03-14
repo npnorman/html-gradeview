@@ -42,24 +42,33 @@
 
 .html {
     flex: 40%;
-    margin: 10px;
+    margin: 0px 10px 0px 10px;
+    border: 1px solid black;
 }
 
 .html iframe {
     width: 100%;
-    height: 95%;
+    height: 90vh;
     border: 0px;
+
+    background-color: white;
 }
 
-.html-raw {
-    display: none;
+.codeWindow {
+    flex: 40%;
+    margin: 0px 10px 0px 10px;
+    height: 87vh;
+    min-width: 0;
 }
 
 .js {
-    flex: 40%;
-    margin: 10px;
     border: 1px solid black;
     overflow: scroll;
+    height: inherit;
+    padding: 10px;
+    max-width: 100%;
+    background-color: rgb(232, 232, 232);
+    color: rgb(0, 0, 0);
 }
 
 .columns {
@@ -71,19 +80,14 @@
     background-color: white;
 }
 
-.html-metadata {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(222, 222, 222);
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.codeWindow select {
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.html-metadata div {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-
-    border-bottom: 1px solid black;
+.html-metadata {
+    background-color: rgb(234, 234, 234);
     padding: 10px;
+    border-bottom: 2px solid rgb(109, 109, 109);
 }

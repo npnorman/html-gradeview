@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This is my Mini Calculator, Cool right!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: papayawhip;">
+<body>
     <h1>(JS) CPU Scheduler Sim</h1>
     <h2>Nicholas Norman, September 2024</h2>
 
@@ -19,6 +20,45 @@
         </tr>
     </table>
 
+    <h2>FCFS</h2>
+    <div class="sched-set">
+        <div>
+            <h3>Ready Queue</h3>
+            <div class="ready-queue" id="rq-box">
+                <p id="readyQueue" ></p>
+            </div>
+        </div>
+
+        <p class="arrow">=></p>
+
+        <div>
+            <h3>CPU</h3>
+            <div class="cpu" id="cpu-box">
+                <p id="cpu"></p>
+            </div>
+        </div>
+
+        <p class="arrow">=></p>
+
+        <div>
+            <h3>Completed</h3>
+            <div class="completed" id="fin-box">
+                <p id="fin"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sets" class="dev-test"></div>
+
+    <p><button id="startSim">Start Simulation</button> <button id="endSim">End Simulation</button> <span id="buttonConfirmation"></span></p>
+    <p><input id="interval" type="number" min="0.01" step="0.1" value="1"> seconds <button id="changeSpeed">Change Speed</button></p>
+    <hr>
+    <p>Task Editor</p>
+    <p>Number of tasks: <input id="taskNum" type="number" step="1" min="1" value="5"></p>
+    <p>Maximum burst time: <input id="maxBurst" type="number" step="1" min="1" value="10"></p>
+    <p><button id="updateTaskParam">Update Parameters</button> -- note this button is disabled after running has started.</p>
+    <hr>
+    <p>For now, to reload: <button id="reload">Reload Sim</button></p>
     <h2>FCFS</h2>
     <div class="sched-set">
         <div>

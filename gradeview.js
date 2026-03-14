@@ -3,10 +3,9 @@
 // load contents from JS file into HTML
 
 jsCodeWindow = document.getElementById("js-code");
-htmlCodeWindow = document.getElementById("html-code");
 htmlIframe = document.getElementById("html-iframe");
-filename = document.getElementById("filename");
 htmlTitle = document.getElementById("html-title");
+codeSelector = document.getElementById("code-url");
 
 function getIframeTitle() {
     htmlTitle.textContent = htmlIframe.contentDocument.title;
@@ -14,10 +13,7 @@ function getIframeTitle() {
     htmlIframe.removeEventListener('load', getIframeTitle);
 }
 
-function loadHTML(URL) {
-    filename.textContent = URL;
-    filename.title = URL;
-    
+function loadHTML() {
     htmlIframe.addEventListener('load', getIframeTitle);
 }
 
@@ -28,15 +24,15 @@ async function loadFile(codeWindow, URL) {
 
     if (response.ok) {
         codeText = await response.text();
+        codeWindow.textContent = codeText;
     } else {
         console.log("Error reading file");
+        codeWindow.textContent = "Error reading file";
     }
-
-    codeWindow.textContent = codeText;
+    
 }
 
 loadFile(jsCodeWindow, "./example_html/js1.js");
-loadFile(htmlCodeWindow, "./example_html/html1.html");
 loadHTML("./example_html/html1.html");
 
 // folders
@@ -69,4 +65,8 @@ folders.addEventListener('click', function (e) {
     if (isCorrectElementSelected) {
         cssTarget.classList.add("selected");
     }
+});
+
+codeSelector.addEventListener('change', function () {
+    loadFile(jsCodeWindow, codeSelector.value);
 });

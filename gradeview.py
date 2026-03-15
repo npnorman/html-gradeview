@@ -211,7 +211,9 @@ folderContents = {};
         files = []
         for root, dirs, filenames in os.walk(folderPath):
             for filename in filenames:
-                files.append(os.path.join(folderPath, filename))
+                fullPath = os.path.join(root, filename)
+                relPath = os.path.relpath(fullPath)
+                files.append(relPath)
             
         htmlFiles = ""
         otherFiles = ""

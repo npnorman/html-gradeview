@@ -85,7 +85,7 @@ def generate_files(inputURL):
     
     gradeviewFile.close()
     
-    jsFile = open("gradeview.js", "w")
+    jsFile = open("gradeview.js", "w", encoding="utf-8")
 
     currentJS = """
 // Nicholas Norman March 2026

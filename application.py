@@ -34,7 +34,7 @@ def run_gradeview():
 
 root.minsize(300,0)
 frm.pack()
-ttk.Button(frm, text="Select Input Folder", command=open_in_folder).pack()
+ttk.Button(frm, text="Select Folder from Input Folder", command=open_in_folder).pack()
 ttk.Button(frm, text="Run Gradeview", command=run_gradeview).pack()
 output = ttk.Label(frm, text="")
 output.pack()
